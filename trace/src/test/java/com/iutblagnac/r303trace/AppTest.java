@@ -7,39 +7,25 @@ import junit.framework.TestSuite;
  * Unit test for simple App.
  */
 public class AppTest 
-    extends TestCase
-{
+/**
+ * Unit test for simple App.
+ */
+public class AppTest {
     /**
-     * Create the test case
-     *
-     * @param testName name of the test case
+     * Test de la méthode hello()
      */
-    public AppTest( String testName )
-    {
-        super( testName );
+    @Test
+    public void testHello() {
+        String test = "Hello World!";
+        assertEquals("ERREUR", test, App.hello());
     }
 
-    /**
-     * @return the suite of tests being tested
+    /*
+     * Test méthode hello(param)
      */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Test the return with empty parameter
-     */
-    public void testHelloEmptyParameter()
-    {
-        assertEquals("Hello World!", App.hello());
-    }
-
-    /**
-     * Test the return with a parameter
-     */
-    public void testHelloParameter()
-    {
-        assertEquals("Hello JMB!", App.hello("Hello JMB!"));
+    @Test
+    public void testHelloParam() {
+        String test = "COUCOU";
+        assertEquals("ERREUR", test, App.hello("COUCOU"));
     }
 }
